@@ -1,5 +1,6 @@
-# Dynamic Discrete Choice Models: Methods, Matlab Code, and Exercises
-## Jaap H. Abbring and Tobias J. Klein
+# Dynamic Discrete Choice Models
+## Methods, Matlab Code, and Exercises
+by Jaap H. Abbring and Tobias J. Klein
 
 Matlab package for teaching and learning the econometrics of dynamic discrete choice models.
 
