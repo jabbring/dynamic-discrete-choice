@@ -1,0 +1,31 @@
+.DS_Store
+*.png
+*.html
+*.csv
+*.m~
+
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+
+## Intermediate documents:
+*.dvi
+*.ps
+*.pdf
+
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.blg
+
+## Editors:
+# WinEdt
+*.bak
+*.sav
