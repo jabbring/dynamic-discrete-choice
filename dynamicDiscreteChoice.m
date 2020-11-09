@@ -77,7 +77,7 @@ nFirms = 1000
 %{
 	We also set the tolerance |tolFixedPoint| on the fixed point $U$ of $\Psi$ that we will use to determine the simulation's entry and exit rules. This same tolerance will also be used when solving the model in the inner loop of the NFXP procedure.
 %}
-tolFixedPoint = 1e-10
+tolFixedPoint = 1e-2
 %{
 Next, we specify the values of the model's parameters used in the simulation: 
 	\begin{dictionary}
@@ -126,7 +126,7 @@ lowerBounds(3) = 0;
     Finally, we pass some options, including tolerances that specify the criterion for the outer loop convergence, to |fmincon| through the structure |OptimizerOptions| (recall that we have already set the inner loop tolerance in |tolFixedPoint|). We use the function |optimset| from the \textsc{Optimization Toolbox} to assign values to specific fields (options) in |OptimizerOptions| and then call |fmincon| to run the NFXP maximum likelihood procedure (to use \textsc{Knitro} instead, simply replace |fmincon| by |knitromatlab|, |knitrolink|, or |ktrlink|, depending on the packages installed\footnote{|fmincon| requires \textsc{Matlab}'s \textsc{Optimization Toolbox}, |knitromatlab| is included in \textsc{Knitro} 9.0, |knitrolink| uses both, and |ktrlink| can be used if the \textsc{Optimization Toolbox} is installed with an earlier version of \textsc{Knitro}.}).
 %}
 OptimizerOptions = optimset('Display','iter','Algorithm','interior-point','AlwaysHonorConstraints','bounds',...
-                            'GradObj','on','TolFun',1E-6,'TolX',1E-10,'DerivativeCheck','off','TypicalX',[beta;delta(2)]);
+                            'GradObj','off','TolFun',1E-10,'TolX',1E-10,'DerivativeCheck','off','TypicalX',[beta;delta(2)]);
 [maxLikEstimates,~,exitflag] = fmincon(objectiveFunction,startvalues,[],[],[],[],lowerBounds,[],[],OptimizerOptions)
 %{
 This gives maximum partial likelihood estimates of $(\beta_0,\beta_1,\delta_1)$. To calculate standard errors, we call |negLogLik| once more to estimate the corresponding Fisher information matrix and store this in |informationMatrix|. Its inverse is an estimate of the maximum likelihood estimator's asymptotic variance-covariance matrix.
