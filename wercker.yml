@@ -8,36 +8,30 @@ build:
             name: create package
             code: |
                 apt-get update && apt-get -yy install git zip
-                export TZ='US/Eastern'
-                remote="https://$GITHUB_TOKEN@github.com/$WERCKER_GIT_OWNER/very-simple-empirics-sandbox"
+                export TZ='Europe/Amsterdam'
+                remote="https://$GITHUB_TOKEN@github.com/$WERCKER_GIT_OWNER/dynamic-discrete-choice"
                 git clone $remote komments
                 cd komments
                 git checkout komments
                 cd ..
-                perl komments/kpp.pl documentation.m
-                zip very-simple.zip *.m *.html
+                perl komments/kpp.pl dynamicDiscreteChoice.m
+                zip dynamicDiscreteChoice.zip *.m *.txt *.html
 deploy:
     steps:
         - script:
             name: deploy
             code: |
                 apt-get update && apt-get -yy install git
-                export TZ='US/Eastern'
-                remote="https://$GITHUB_TOKEN@github.com/$WERCKER_GIT_OWNER/jtilly.github.io.git"
+                export TZ='Europe/Amsterdam'
+                remote="https://$GITHUB_TOKEN@github.com/$WERCKER_GIT_OWNER/jabbring.github.io.git"
                 git clone $remote
-                cd jtilly.github.io
-                git config user.email "jantilly@gmail.com"
-                git config user.name "jtilly"
-                mkdir -p very-simple-empirics-sandbox
-                cd very-simple-empirics-sandbox
-                cp -f ../../documentation.m.html .
-                cp -f ../../very-simple.zip .
-                git add documentation.m.html very-simple.zip
-                cd ..
-                mkdir -p very-simple-markov-perfect
-                cd very-simple-markov-perfect
-                cp -f ../../documentation.m.html .
-                cp -f ../../very-simple.zip .
-                git add documentation.m.html very-simple.zip
+                cd jabbring.github.io
+                git config user.email "jaap@abbring.org"
+                git config user.name "jabbring"
+                mkdir -p dynamic-discrete-choice
+                cd dynamic-discrete-choice
+                cp -f ../../dynamicDiscreteChoice.m.html .
+                cp -f ../../dynamicDiscreteChoice.zip .
+                git add dynamicDiscreteChoice.m.html dynamicDiscreteChoice.zip
                 git commit -m "Update from Wercker"
                 git push origin master
