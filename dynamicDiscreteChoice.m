@@ -13,7 +13,7 @@
 
 \paragraph{Viewing and Using this File}
 
-This file documents the source code that is available from the GitHub repository \url{https://github.com/jabbring/dynamic-discrete-choice}{jabbring/dynamic-discrete-choice}. You can also download a \url{http://jabbring.github.io/dynamic-discrete-choice/dynamicDiscreteChoice.zip}{\textsc{Zip} archive} that includes both this file and all code. We welcome the use of this documentation and code under an MIT license (see the \textsc{LICENSE} file for details). 
+This file documents the source code that is available from the GitHub repository \url{https://github.com/jabbring/dynamic-discrete-choice}{jabbring/dynamic-discrete-choice}. You can also download a \url{http://jabbring.github.io/dynamic-discrete-choice/dynamicDiscreteChoice.zip}{\textsc{Zip} archive} that includes both this file and the code. We welcome the use of this software under an MIT license (see the \textsc{LICENSE} file for details). 
 			
 This file (|dynamicDiscreteChoice.m.html|) was generated from the \textsc{Matlab} script |dynamicDiscreteChoice.m| using the \textsc{Komments++} package, which was created and generously provided to us by Jeffrey R. Campbell. It documents how you can run the script |dynamicDiscreteChoice.m| with \textsc{Matlab} to specify, simulate, and estimate an empirical discrete-time version of the model of firm entry and exit under uncertainty by \cite{jpe89:dixit}. These computations will use, and therefore exemplify the use of, various tailor-made \textsc{Matlab} functions that are documented in this file. Thus, this file also is a guide to these functions and the way they can be adapted and used in your own exercises.
     
