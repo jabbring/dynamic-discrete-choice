@@ -12,7 +12,7 @@ build:
                 remote="https://$GITHUB_TOKEN@github.com/$WERCKER_GIT_OWNER/kpp"
                 git clone $remote komments
                 perl komments/kpp.pl dynamicDiscreteChoice.m
-                zip dynamicDiscreteChoice.zip *.m *.md *.html
+                zip dynamicDiscreteChoice.zip LICENSE README.md *.m *.html
 deploy:
     steps:
         - script:
