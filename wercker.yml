@@ -32,6 +32,6 @@ deploy:
                 cd dynamic-discrete-choice
                 cp -f ../../dynamicDiscreteChoice.m.html .
                 cp -f ../../dynamicDiscreteChoice.zip .
-                git add dynamicDiscreteChoice.m.html dynamicDiscreteChoice.zip
+                git add -f dynamicDiscreteChoice.m.html dynamicDiscreteChoice.zip
                 git commit -m "Update from Wercker"
                 git push origin master
