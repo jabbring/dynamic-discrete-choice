@@ -1,19 +1,19 @@
 %{
 \documentclass{article}
-	\title{Dynamic Discrete Choice Models: Methods, Matlab Code, and Exercises\thanks{We wish to thank Jeffrey R. Campbell for help with \textsc{Komments++} and to Nan Yang and our students for comments on earlier versions of this code. First draft: February 8, 2011. \copyright\ (2020) Jaap H. Abbring and Tobias J. Klein}}
+	\title{Dynamic Discrete Choice Models: Methods, Matlab Code, and Exercises\thanks{We wish to thank Jeffrey R. Campbell for help with \textsc{Komments++} and to Nan Yang and our students for comments on earlier versions of this code. First draft: February 8, 2011. \copyright 2020 Jaap H. Abbring and Tobias J. Klein.}}
 	\author{Jaap H. Abbring\thanks{Department of Econometrics \& OR, Tilburg University, P.O. Box
 		90153, 5000 LE Tilburg, The Netherlands. E-mail: \url{mailto:J.H.Abbring@uvt.nl}{J.H.Abbring@uvt.nl}. \url{http://jaap.abbring.org/}{http://jaap.abbring.org/}.}}
 			\author{Tobias J. Klein\thanks{Department of Econometrics \& OR, Tilburg University, P.O. Box
 		90153, 5000 LE Tilburg, The Netherlands. E-mail: \url{mailto:T.J.Klein@uvt.nl}{T.J.Klein@uvt.nl}. \url{http://www.tobiasklein.ws/}{http://www.tobiasklein.ws/}.}}
 			\date{This version: November 12, 2020}
 	\begin{abstract}
-			This document supports the first \textsc{Matlab} computing sessions in our PhD elective course Empirical Industrial Organization II in CentER Tilburg's Research Master in Economics program (230323). It contains some notes on the theory of dynamic discrete choice models and on methods for their computation and estimation. It is centered around some basic \textsc{Matlab} code for solving, simulating, and empirically analyzing a simple dynamic discrete choice model. Student exercises ask students to extend this code to apply different and more advanced computational and econometric methods to a wider range of models.
+			This document supports the first \textsc{Matlab} computing sessions in our PhD elective course Empirical Industrial Organization 2 in CentER Tilburg's Research Master in Economics program (230323). It contains some notes on the theory of dynamic discrete choice models and on methods for their computation and estimation. It is centered around some basic \textsc{Matlab} code for solving, simulating, and empirically analyzing a simple dynamic discrete choice model. Student exercises ask students to extend this code to apply different and more advanced computational and econometric methods to a wider range of models.
 \end{abstract}
 
 
 \paragraph{Viewing and Using this File}
 
-You can download a \url{http://jabbring.git.io/dynamic-discrete-choice/dynamicDiscreteChoice.zip}{\textsc{Zip} archive} with this file and all the code. The source code is also available from the GitHub repository \url{https://github.com/jabbring/dynamic-discrete-choice}{jabbring/dynamic-discrete-choice}. All code and documentation is provided for use and distribution under an MIT license. 
+The file documents the source code that is available from the GitHub repository \url{https://github.com/jabbring/dynamic-discrete-choice}{jabbring/dynamic-discrete-choice}. You can also download a \url{http://jabbring.git.io/dynamic-discrete-choice/dynamicDiscreteChoice.zip}{\textsc{Zip} archive} that includes both this file and all code. We provide this documentation and code for use and distribution under an MIT license (see the \sc{LICENSE} file for details). 
 			
 This file (|dynamicDiscreteChoice.m.html|) was generated from the \textsc{Matlab} script |dynamicDiscreteChoice.m| using the \textsc{Komments++} package, which was created and generously provided to us by Jeffrey R. Campbell. It documents how you can run the script |dynamicDiscreteChoice.m| with \textsc{Matlab} to specify, simulate, and estimate an empirical discrete-time version of the model of firm entry and exit under uncertainty by \cite{jpe89:dixit}. These computations will use, and therefore exemplify the use of, various tailor-made \textsc{Matlab} functions that are documented in this file. Thus, this file also is a guide to these functions and the way they can be adapted and used in your own exercises.
     
@@ -21,9 +21,7 @@ In Safari and Firefox, you can switch between the default view of this document,
 
 \paragraph{Software Requirements}
 	
-    Running the code documented in this file requires a recent version of
-\url{http://www.mathworks.com/products/matlab/}{\textsc{Matlab}} with its
-    \url{http://www.mathworks.nl/help/optim/index.html}{\textsc{Optimization Toolbox}}. The code can easily be adapted to use the \url{http://www.ziena.com/knitro.html}{\textsc{Knitro}} optimization package instead of or with \textsc{Matlab}'s \textsc{Optimization Toolbox} (see Section \ref{script}).\footnote{The code has been tested with \textsc{Matlab} 2014a and 2014b, with its \textsc{Optimization Toolbox} and the \textsc{Knitro} 9.0 optimization package, on an iMac with OS X 10.9. A basic student version of \textsc{Knitro} is available from \url{http://www.ziena.com/knitro.html}{Ziena Optimization} for free.}
+Running the code documented in this file requires a recent version of \url{http://www.mathworks.com/products/matlab/}{\textsc{Matlab}} with its \url{http://www.mathworks.nl/help/optim/index.html}{\textsc{Optimization Toolbox}}. The code can easily be adapted to use the \url{https://www.artelys.com/solvers/knitro/}{\textsc{Knitro}} solver instead of \textsc{Matlab}'s \textsc{Optimization Toolbox} (see Section \ref{script}).\footnote{The code has been tested with \textsc{Matlab} 2014a and later, with its \textsc{Optimization Toolbox}, on iMacs with OS X 10.9 and later. A free trial version of \textsc{Knitro} is available from \url{https://www.artelys.com/solvers/knitro/}{Artelys}.}
 
 \paragraph{Road Map}
 
