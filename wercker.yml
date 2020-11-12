@@ -23,7 +23,7 @@ deploy:
             code: |
                 apt-get update && apt-get -yy install git
                 export TZ='Europe/Amsterdam'
-                remote="https://$GITHUB_TOKEN@github.com/$WERCKER_GIT_OWNER/jabbring.github.io.git"
+                remote="https://$GITHUB_TOKEN@github.com/$WERCKER_GIT_OWNER/jabbring.github.io"
                 git clone $remote
                 cd jabbring.github.io
                 git config user.email "j.h.abbring@tilburgunversity.edu"
