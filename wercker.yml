@@ -8,7 +8,7 @@ build:
             name: create package
             code: |
                 apt-get update && apt-get -yy install git zip
-                export TZ='Europe/Amsterdam'
+                export TZ='Europe/Paris'
                 remote="https://$GITHUB_TOKEN@github.com/$WERCKER_GIT_OWNER/kpp"
                 git clone $remote komments
                 perl komments/kpp.pl dynamicDiscreteChoice.m
@@ -19,7 +19,7 @@ deploy:
             name: deploy
             code: |
                 apt-get update && apt-get -yy install git
-                export TZ='Europe/Amsterdam'
+                export TZ='Europe/Paris'
                 remote="https://$GITHUB_TOKEN@github.com/$WERCKER_GIT_OWNER/jabbring.github.io"
                 git clone $remote
                 cd jabbring.github.io
