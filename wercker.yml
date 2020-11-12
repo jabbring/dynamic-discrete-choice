@@ -26,8 +26,6 @@ deploy:
                 remote="https://$GITHUB_TOKEN@github.com/$WERCKER_GIT_OWNER/jabbring.github.io.git"
                 git clone $remote
                 cd jabbring.github.io
-                git config user.email "j.h.abbring@tilburguniversity.edu"
-                git config user.name "jabbring"
                 mkdir -p dynamic-discrete-choice
                 cd dynamic-discrete-choice
                 cp -f ../../dynamicDiscreteChoice.m.html .
