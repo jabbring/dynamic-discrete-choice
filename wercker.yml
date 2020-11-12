@@ -15,7 +15,7 @@ build:
                 git checkout komments
                 cd ..
                 perl komments/kpp.pl dynamicDiscreteChoice.m
-                zip dynamicDiscreteChoice.zip *.m *.txt *.html
+                zip dynamicDiscreteChoice.zip *.m *.md *.html
 deploy:
     steps:
         - script:
