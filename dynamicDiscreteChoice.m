@@ -1,6 +1,7 @@
 %{
 \documentclass{article}
-	\title{Dynamic Discrete Choice Models: Methods, Matlab Code, and Exercises\thanks{We thank Jeff Campbell for help with \textsc{Komments++} and Nan Yang and our students for comments on earlier versions of this code. First draft: February 8, 2011. \copyright 2020 Jaap H. Abbring and Tobias J. Klein.}}
+	\title{Dynamic Discrete Choice Models: Methods, Matlab Code, and Exercises\thanks{We thank Jeff Campbell for help with \textsc{Komments++} and Nan Yang and our students for comments on earlier versions of this code. First draft: February 8, 2011. 
+We welcome the use of this software under an \url{MIT license}{https://github.com/jabbring/dynamic-discrete-choice/blob/master/LICENSE}. \copyright 2020 Jaap H. Abbring and Tobias J. Klein.}}
 	\author{Jaap H. Abbring\thanks{Department of Econometrics \& OR, Tilburg University, P.O. Box
 		90153, 5000 LE Tilburg, The Netherlands. E-mail: \url{mailto:jaap@abbring.org}{jaap@abbring.org}. Web: \url{http://jaap.abbring.org/}{jaap.abbring.org}.}}
 			\author{Tobias J. Klein\thanks{Department of Econometrics \& OR, Tilburg University, P.O. Box
@@ -15,9 +16,7 @@
 
 This file (|dynamicDiscreteChoice.m.html|) documents the code in the GitHub repository \url{https://github.com/jabbring/dynamic-discrete-choice}{jabbring/dynamic-discrete-choice} (a \url{http://jabbring.github.io/dynamic-discrete-choice/dynamicDiscreteChoice.zip}{\textsc{Zip} archive} packages both together). It was generated from the \textsc{Matlab} script |dynamicDiscreteChoice.m| using the \textsc{Komments++} package, which was created and generously provided to us by Jeffrey R. Campbell. It documents how you can run the script |dynamicDiscreteChoice.m| with \textsc{Matlab} to specify, simulate, and estimate an empirical discrete-time version of the model of firm entry and exit under uncertainty by \cite{jpe89:dixit}. These computations will use, and therefore exemplify the use of, various tailor-made \textsc{Matlab} functions that are documented in this file. Thus, this file also is a guide to these functions and the way they can be adapted and used in your own exercises. 
     
-In Safari and Firefox, you can switch between the default view of this document, which displays the working code with all its documentation, and an alternative view that shows \emph{only} the code by pressing ``c''.
-
-We welcome the use of this software under an MIT license. See the \url{https://github.com/jabbring/dynamic-discrete-choice/blob/master/LICENSE}{\textsc{LICENSE}} file for details. 
+In Safari and Firefox, you can switch between the default view of this document, which displays the working code with all its documentation, and an alternative view that shows \emph{only} the code by pressing ``c''. 
 
 \paragraph{Software Requirements}
 	
