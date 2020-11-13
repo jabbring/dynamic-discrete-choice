@@ -6,7 +6,7 @@ We welcome the use of this software under an \url{https://github.com/jabbring/dy
 		90153, 5000 LE Tilburg, The Netherlands. E-mail: \url{mailto:jaap@abbring.org}{jaap@abbring.org}. Web: \url{http://jaap.abbring.org/}{jaap.abbring.org}.}}
 			\author{Tobias J. Klein\thanks{Department of Econometrics \& OR, Tilburg University, P.O. Box
 		90153, 5000 LE Tilburg, The Netherlands. E-mail: \url{mailto:t.j.klein@uvt.nl}{t.j.klein@uvt.nl}. Web: \url{http://www.tobiasklein.ws/}{www.tobiasklein.ws}.}}
-			\date{\today}
+			\date{November 2020}
 	\begin{abstract}
 			This document supports the first \textsc{Matlab} computing sessions in our PhD elective course Empirical Industrial Organization 2 in CentER Tilburg's Research Master in Economics program (230323). It contains some notes on the theory of dynamic discrete choice models and on methods for their computation and estimation. It is centered around some basic \textsc{Matlab} code for solving, simulating, and empirically analyzing a simple dynamic discrete choice model. Student exercises ask students to extend this code to apply different and more advanced computational and econometric methods to a wider range of models.
 \end{abstract}
