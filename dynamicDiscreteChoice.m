@@ -1,6 +1,6 @@
 %{
 \documentclass{article}
-	\title{Dynamic Discrete Choice Models: Methods, Matlab Code, and Exercises\thanks{We thank Jeff Campbell for help with \textsc{Komments++} and Nan Yang and our students for comments on earlier versions of this code. First draft: February 8, 2011. 
+	\title{Dynamic Discrete Choice Models: Methods, Matlab Code, and Exercises\thanks{We thank Jeffrey Campbell for help with \textsc{Komments++} and Nan Yang and our students in CentER Tilburg's Empirical Industrial Organization 2 (230323) for comments on earlier versions of this code. First draft: February 8, 2011. 
 We welcome the use of this software under an \url{https://github.com/jabbring/dynamic-discrete-choice/blob/master/LICENSE}{MIT license}. \copyright 2020 Jaap H. Abbring and Tobias J. Klein.}}
 	\author{Jaap H. Abbring\thanks{Department of Econometrics \& OR, Tilburg University, P.O. Box
 		90153, 5000 LE Tilburg, The Netherlands. E-mail: \url{mailto:jaap@abbring.org}{jaap@abbring.org}. Web: \url{http://jaap.abbring.org/}{jaap.abbring.org}.}}
@@ -8,7 +8,7 @@ We welcome the use of this software under an \url{https://github.com/jabbring/dy
 		90153, 5000 LE Tilburg, The Netherlands. E-mail: \url{mailto:t.j.klein@uvt.nl}{t.j.klein@uvt.nl}. Web: \url{http://www.tobiasklein.ws/}{www.tobiasklein.ws}.}}
 			\date{November 2020}
 	\begin{abstract}
-			This document supports the first \textsc{Matlab} computing sessions in our PhD elective course Empirical Industrial Organization 2 in CentER Tilburg's Research Master in Economics program (230323). It contains some notes on the theory of dynamic discrete choice models and on methods for their computation and estimation. It is centered around some basic \textsc{Matlab} code for solving, simulating, and empirically analyzing a simple dynamic discrete choice model. Student exercises ask students to extend this code to apply different and more advanced computational and econometric methods to a wider range of models.
+			This document supports the first \textsc{Matlab} computing sessions in a graduate course on dynamic discrete choices models. It contains some notes on the theory of dynamic discrete choice models and on methods for their computation and estimation. It is centered around basic \textsc{Matlab} code for solving, simulating, and empirically analyzing a simple model of firm entry and exit under uncertainty. This code is available from a public Github repository and can be distributed to students as starter code, for example using the Github Classroom. Exercises ask students to adapt and extend this starter code to apply different and more advanced computational and econometric methods to a wider range of models.
 \end{abstract}
 
 
