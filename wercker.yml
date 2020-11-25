@@ -8,22 +8,22 @@ build:
             name: create package
             code: |
                 apt-get update && apt-get -yy install git zip
-                export TZ='Europe/London'
+                export TZ='Europe/Amsterdam'
                 remote="https://$GITHUB_TOKEN@github.com/$WERCKER_GIT_OWNER/kpp"
                 git clone $remote komments
                 perl komments/kpp.pl dynamicDiscreteChoice.m
-                zip dynamicDiscreteChoice.zip LICENSE README.md *.m *.html
+                zip dynamicDiscreteChoice.zip *.m *.md *.html
 deploy:
     steps:
         - script:
             name: deploy
             code: |
                 apt-get update && apt-get -yy install git
-                export TZ='Europe/London'
+                export TZ='Europe/Amsterdam'
                 remote="https://$GITHUB_TOKEN@github.com/$WERCKER_GIT_OWNER/jabbring.github.io"
                 git clone $remote
                 cd jabbring.github.io
-                git config user.email "j.h.abbring@tilburgunversity.edu"
+                git config user.email "jaap@abbring.org"
                 git config user.name "jabbring"
                 mkdir -p dynamic-discrete-choice
                 cd dynamic-discrete-choice
