@@ -24,8 +24,7 @@ Running the code documented in this file requires a recent version of \url{http:
 
 \paragraph{Implementations in Other Languages}
 
-A \url{https://julialang.org}{Julia} implementation of this code by Rafael
-Greminger is available from the Github repository \url{https://github.com/rgreminger/DDCModelsExample.jl}{rgreminger/DDCModelsExample.jl}.
+A Julia \url{https://github.com/rgreminger/DDCModelsExample.jl}{rgreminger/DDCModelsExample.jl}
 
 \paragraph{Road Map}
 
