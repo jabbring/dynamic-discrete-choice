@@ -6,7 +6,7 @@ We welcome the use of this software under an \url{https://github.com/jabbring/dy
 		90153, 5000 LE Tilburg, The Netherlands. E-mail: \url{mailto:jaap@abbring.org}{jaap@abbring.org}. Web: \url{http://jaap.abbring.org/}{jaap.abbring.org}.}}
 			\author{Tobias J. Klein\thanks{Department of Econometrics \& OR, Tilburg University, P.O. Box
 		90153, 5000 LE Tilburg, The Netherlands. E-mail: \url{mailto:t.j.klein@uvt.nl}{t.j.klein@uvt.nl}. Web: \url{http://www.tobiasklein.ws/}{www.tobiasklein.ws}.}}
-			\date{November 2020}
+			\date{October 2021}
 	\begin{abstract}
 			This document supports the first computing sessions in a graduate course on dynamic discrete choice models. It is centered around basic \textsc{Matlab} code for solving, simulating, and empirically analyzing a simple model of firm entry and exit under uncertainty. This code is available from a public Github repository and can be distributed to students as starter code, for example using the Github Classroom. Exercises ask students to adapt and extend this starter code to apply different and more advanced computational and econometric methods to a wider range of models.
 \end{abstract}
@@ -24,7 +24,8 @@ Running the code documented in this file requires a recent version of \url{http:
 
 \paragraph{Implementations in Other Languages}
 
-A Julia \url{https://github.com/rgreminger/DDCModelsExample.jl}{rgreminger/DDCModelsExample.jl}
+A \url{https://julialang.org}{Julia} implementation of this code by Rafael
+Greminger is available from the Github repository \url{https://github.com/rgreminger/DDCModelsExample.jl}{rgreminger/DDCModelsExample.jl}.
 
 \paragraph{Road Map}
 
@@ -95,14 +96,15 @@ supportX = (1:nSuppX)'
 capPi = 1./(1+abs(ones(nSuppX,1)*(1:nSuppX)-(1:nSuppX)'*ones(1,nSuppX)));
 capPi = capPi./(sum(capPi')'*ones(1,nSuppX))
 beta = [-0.1*nSuppX;0.2]
-delta = [0;1]
+delta = [0;5]
 rho = 0.95	
 %{
 For these parameter values, we compute the flow payoffs $u_0$ (|u0|) and $u_1$ (|u1|), the choice-specific expected discounted values $U_0$ (|capU0|) and $U_1$ (|capU1|), and their contrast $\Delta U$ (|deltaU|).
 %}
 [u0,u1] = flowpayoffs(supportX,beta,delta); 
 [capU0,capU1] = fixedPoint(u0,u1,capPi,rho,tolFixedPoint,@bellman,[],[]);
-deltaU = capU1-capU0;
+deltaU = capU1-capU0
+dlittleu=u1-u0
 %{
 	With $\Delta U$ computed, and $\Pi$ specified, we proceed to simulate a $T\times N$ matrix of choices |choices| and a $T\times N$ matrix of states |iX| (recall from Section \ref{simulate} that |iX| contains indices that point to elements of ${\cal X}$ rather than those values themselves).
 %}
@@ -112,6 +114,7 @@ deltaU = capU1-capU0;
 
 First, suppose that $\Pi$ is known. We use |fmincon| from \textsc{Matlab}'s \textsc{Optimization Toolbox} to maximize the partial likelihood for the choices (the code can easily be adapted to use other optimizers and packages, because these have a very similar \url{http://www.mathworks.nl/help/optim/ug/fmincon.html}{syntax}; see below). Because |fmincon| is a minimizer, we use minus the log likelihood as its objective. The function |negLogLik| computes this objective, but has input arguments other than the vector of model parameters to be estimated. Because \url{http://www.mathworks.nl/help/optim/ug/passing-extra-parameters.html}{the syntax of |fmincon| does not allow this}, we define a function handle |objectiveFunction| to an anonymous function that equals |negLogLik| but does not have this extra inputs.
 %}
+tolFixedPoint = 1E-10
 objectiveFunction = @(parameters)negLogLik(choices,iX,supportX,capPi,parameters(1:2),[delta(1);parameters(3)],...
                                            rho,@flowpayoffs,@bellman,@fixedPoint,tolFixedPoint)
 %{
@@ -223,7 +226,7 @@ Once you have coded up the analytical derivatives (in order to use them in the o
     \bibitem[Eckstein and Wolpin (1999)]{Eckstein_Wolpin_1999_Econometrica} Eckstein, Zvi and Kenneth I. Wolpin (1999). Why youths drop out of high school: The impact of preferences, opportunities, and abilities. \textit{Econometrica} 67(6), 1295-1339.
     \bibitem[Hotz and Miller (1993)]{res93:hotzmiller}Hotz, V. Joseph and David A. Miller (1993). Conditional choice probabilities and the estimation of dynamic models. \textit{Review of Economic Studies} 60, 497-529.
     \bibitem[Hotz et al. (1994)]{res94:hotzetal}Hotz, V. Joseph, David A. Miller, Seth Sanders and Jeffrey Smith (1994). A simulation estimator for dynamic models of discrete choice. \textit{Review of Economic Studies} 61(2), 265-289.
-    \bibitem[Iskhakov et al. (2015)]{ecta16:iskhakovetal} Iskhakov, Fedor, Jinhyuk Lee, John Rust, Bertel Schjerning and Kyoungwon Seo (2016). Comment on "Constrained optimization approaches to estimation of structural models". \textit{Econometrica} 84(1), 365-370.
+    \bibitem[Iskhakov et al. (2016)]{ecta16:iskhakovetal} Iskhakov, Fedor, Jinhyuk Lee, John Rust, Bertel Schjerning and Kyoungwon Seo (2016). Comment on "Constrained optimization approaches to estimation of structural models". \textit{Econometrica} 84(1), 365-370.
     \bibitem[Judd (1998)]{mit98:judd}Judd, Kenneth L. 1998. \textit{Numerical Methods in Economics}.  MIT Press. Cambridge, MA.
     \bibitem[Judd and Su (2012)]{ecta12:juddsu} Judd, Kenneth L. and Che-Lin Su (2012). Constrained optimization approaches to estimation of structural models. \textit{Econometrica} 80(5), 2213-2230.
     \bibitem[Keane and Wolpin (1997)]{Keane_Wolpin_1997_JPE} Keane, Michael P. and Kenneth I. Wolpin (1997). The career decisions of young men. \textit{Journal of Political Economy} 105(3), 473-522.

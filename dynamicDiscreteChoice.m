@@ -24,8 +24,7 @@ Running the code documented in this file requires a recent version of \url{http:
 
 \paragraph{Implementations in Other Languages}
 
-A \url{https://julialang.org}{Julia} implementation of this code by Rafael
-Greminger is available from the Github repository \url{https://github.com/rgreminger/DDCModelsExample.jl}{rgreminger/DDCModelsExample.jl}.
+A \url{https://julialang.org}{Julia} implementation of this code by Rafael Greminger is available from the GitHub repository \url{https://github.com/rgreminger/DDCModelsExample.jl}{rgreminger/DDCModelsExample.jl}.
 
 \paragraph{Road Map}
 
@@ -96,7 +95,7 @@ supportX = (1:nSuppX)'
 capPi = 1./(1+abs(ones(nSuppX,1)*(1:nSuppX)-(1:nSuppX)'*ones(1,nSuppX)));
 capPi = capPi./(sum(capPi')'*ones(1,nSuppX))
 beta = [-0.1*nSuppX;0.2]
-delta = [0;1]
+delta = [0;0.001]
 rho = 0.95	
 %{
 For these parameter values, we compute the flow payoffs $u_0$ (|u0|) and $u_1$ (|u1|), the choice-specific expected discounted values $U_0$ (|capU0|) and $U_1$ (|capU1|), and their contrast $\Delta U$ (|deltaU|).
@@ -113,6 +112,7 @@ deltaU = capU1-capU0;
 
 First, suppose that $\Pi$ is known. We use |fmincon| from \textsc{Matlab}'s \textsc{Optimization Toolbox} to maximize the partial likelihood for the choices (the code can easily be adapted to use other optimizers and packages, because these have a very similar \url{http://www.mathworks.nl/help/optim/ug/fmincon.html}{syntax}; see below). Because |fmincon| is a minimizer, we use minus the log likelihood as its objective. The function |negLogLik| computes this objective, but has input arguments other than the vector of model parameters to be estimated. Because \url{http://www.mathworks.nl/help/optim/ug/passing-extra-parameters.html}{the syntax of |fmincon| does not allow this}, we define a function handle |objectiveFunction| to an anonymous function that equals |negLogLik| but does not have this extra inputs.
 %}
+tolFixedPoint = 1e-1
 objectiveFunction = @(parameters)negLogLik(choices,iX,supportX,capPi,parameters(1:2),[delta(1);parameters(3)],...
                                            rho,@flowpayoffs,@bellman,@fixedPoint,tolFixedPoint)
 %{
