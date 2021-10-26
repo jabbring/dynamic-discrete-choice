@@ -29,3 +29,6 @@
 # WinEdt
 *.bak
 *.sav
+
+## MATLAB
+*.asv
