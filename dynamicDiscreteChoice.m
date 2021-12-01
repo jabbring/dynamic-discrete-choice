@@ -6,7 +6,7 @@ We welcome the use of this software under an \url{https://github.com/jabbring/dy
 		90153, 5000 LE Tilburg, The Netherlands. E-mail: \url{mailto:jaap@abbring.org}{jaap@abbring.org}. Web: \url{http://jaap.abbring.org/}{jaap.abbring.org}.}}
 			\author{Tobias J. Klein\thanks{Department of Econometrics \& OR, Tilburg University, P.O. Box
 		90153, 5000 LE Tilburg, The Netherlands. E-mail: \url{mailto:t.j.klein@uvt.nl}{t.j.klein@uvt.nl}. Web: \url{http://www.tobiasklein.ws/}{www.tobiasklein.ws}.}}
-			\date{October 2021}
+			\date{December 2021}
 	\begin{abstract}
 			This document supports the first computing sessions in a graduate course on dynamic discrete choice models. It is centered around basic \textsc{Matlab} code for solving, simulating, and empirically analyzing a simple model of firm entry and exit under uncertainty. This code is available from a public Github repository and can be distributed to students as starter code, for example using the Github Classroom. Exercises ask students to adapt and extend this starter code to apply different and more advanced computational and econometric methods to a wider range of models.
 \end{abstract}
