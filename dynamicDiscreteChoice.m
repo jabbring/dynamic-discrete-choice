@@ -1,12 +1,12 @@
 %{
 \documentclass{article}
 	\title{Dynamic Discrete Choice Models: Methods, Matlab Code, and Exercises\thanks{We thank Jeffrey Campbell for help with \textsc{Komments++} and Nan Yang and our students in CentER Tilburg's Empirical Industrial Organization 2 (230323) for comments on earlier versions of this code. First draft: February 8, 2011. 
-We welcome the use of this software under an \url{https://github.com/jabbring/dynamic-discrete-choice/blob/master/LICENSE}{MIT license}. DOI: \url{https://doi.org/10.5281/zenodo.4287734}{10.5281/zenodo.4287734}. \copyright 2020 Jaap H. Abbring and Tobias J. Klein.}}
+We welcome the use of this software under an \url{https://github.com/jabbring/dynamic-discrete-choice/blob/master/LICENSE}{MIT license}. DOI: \url{https://doi.org/10.5281/zenodo.4287733}{10.5281/zenodo.4287733}. \copyright 2020 Jaap H. Abbring and Tobias J. Klein.}}
 	\author{Jaap H. Abbring\thanks{Department of Econometrics \& OR, Tilburg University, P.O. Box
 		90153, 5000 LE Tilburg, The Netherlands. E-mail: \url{mailto:jaap@abbring.org}{jaap@abbring.org}. Web: \url{http://jaap.abbring.org/}{jaap.abbring.org}.}}
 			\author{Tobias J. Klein\thanks{Department of Econometrics \& OR, Tilburg University, P.O. Box
 		90153, 5000 LE Tilburg, The Netherlands. E-mail: \url{mailto:t.j.klein@uvt.nl}{t.j.klein@uvt.nl}. Web: \url{http://www.tobiasklein.ws/}{www.tobiasklein.ws}.}}
-			\date{December 2021}
+			\date{January 2022}
 	\begin{abstract}
 			This document supports the first computing sessions in a graduate course on dynamic discrete choice models. It is centered around basic \textsc{Matlab} code for solving, simulating, and empirically analyzing a simple model of firm entry and exit under uncertainty. This code is available from a public Github repository and can be distributed to students as starter code, for example using the Github Classroom. Exercises ask students to adapt and extend this starter code to apply different and more advanced computational and econometric methods to a wider range of models.
 \end{abstract}
