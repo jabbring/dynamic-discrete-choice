@@ -29,7 +29,7 @@ It returns
 \item{|capU1|} a $K\times 2$ matrix of which the $(i,j)$th entry is
 $U_1(x^i,j-1)$.
 \end{dictionary}	
-	To this end, |bellman| first computes the surpluses $R_0(x)$ and $R_1(x)$ in (\ref{eq:surplus}) for all $x\in\cal{X}$ and stacks these in $K\times 1$ vectors |R0| and |R1|.
+	To this end, |bellman| first computes the surpluses $R_0(x)$ and $R_1(x)$ in (\ref{eq:surplus}) for all $x\in\cal{X}$ and stacks these in $K\times 1$ vectors |r0| and |r1|.
 %}
 r0 = log(exp(capU0(:,1))+exp(capU1(:,1)));
 r1 = log(exp(capU0(:,2))+exp(capU1(:,2)));
@@ -41,5 +41,5 @@ capU1 = u1 + rho*capPi*r1*[1 1];
 %{
 Here, the conditional expectation over $X_{t+1}$ in (\ref{eq:bellman}) is taken by premultiplying the vectors |r0| and |r1| by the Markov transition matrix |capPi|. The vectors |r0| and |r1| are postmultiplied by |[1 1]| because the surpluses, and therefore the continuation payoffs, are independent of the past choice that indexes the columns of |capU0| and |capU1|.
 	
-The logit assumption only affects the operator $\Psi$, and therefore the function |bellman|, through the specification of the surpluses $R_0$ and $R_1$ in (\ref{eq:surplus}). If you want to change the logit assumption, you should change the computation of |r0| and |r1| (and make sure to adapt the computation of choice probabilities and inverse choice probabilities elsewhere as well).
+The logit assumption only affects the operator $\Psi$, and therefore the function |bellman|, through the specification of the surpluses $R_0(x)$ and $R_1(x)$ in (\ref{eq:surplus}). If you want to change the logit assumption, you should change the computation of |r0| and |r1| (and make sure to adapt the computation of choice probabilities and inverse choice probabilities elsewhere as well).
 %}
