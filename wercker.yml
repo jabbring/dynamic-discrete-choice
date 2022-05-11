@@ -7,6 +7,7 @@ build:
         - script:
             name: create package
             code: |
+                apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 871920D1991BC93C
                 apt-get update && apt-get -yy install git zip
                 export TZ='Europe/Amsterdam'
                 remote="https://$GITHUB_TOKEN@github.com/$WERCKER_GIT_OWNER/kpp"
