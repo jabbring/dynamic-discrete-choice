@@ -10,4 +10,4 @@ We welcome the use of this software under an [MIT license](https://github.com/ja
 
 &copy; 2020 Jaap H. Abbring and Tobias J. Klein 
 
-[![DOI](https://zenodo.org/badge/155224290.svg)](https://zenodo.org/badge/latestdoi/155224290)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4287733.svg)](https://doi.org/10.5281/zenodo.4287733)
