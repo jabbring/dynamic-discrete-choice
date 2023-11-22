@@ -6,7 +6,7 @@ We welcome the use of this software under an \url{https://github.com/jabbring/dy
 		90153, 5000 LE Tilburg, The Netherlands. E-mail: \url{mailto:jaap@abbring.org}{jaap@abbring.org}. Web: \url{http://jaap.abbring.org/}{jaap.abbring.org}.}}
 			\author{Tobias J. Klein\thanks{Department of Econometrics \& OR, Tilburg University, P.O. Box
 		90153, 5000 LE Tilburg, The Netherlands. E-mail: \url{mailto:t.j.klein@uvt.nl}{t.j.klein@uvt.nl}. Web: \url{http://www.tobiasklein.ws/}{www.tobiasklein.ws}.}}
-			\date{May 2022}
+			\date{November 2023}
 	\begin{abstract}
 			This document supports the first computing sessions in a graduate course on dynamic discrete choice models. It is centered around basic \textsc{Matlab} code for solving, simulating, and empirically analyzing a simple model of firm entry and exit under uncertainty. This code is available from a public Github repository and can be distributed to students as starter code, for example using the Github Classroom. Exercises ask students to adapt and extend this starter code to apply different and more advanced computational and econometric methods to a wider range of models.
 \end{abstract}
@@ -215,15 +215,15 @@ Once you have coded up the analytical derivatives (in order to use them in the o
     \bibitem[Abbring (2010)]{are10:abbring} Abbring, Jaap H. (2010). Identification of dynamic discrete choice models. \textit{Annual Review of Economics} 2, 367-394.
     \bibitem[Aguirregabiria and Mira (2002)]{ecta02:aguirregabiriamira} Aguirregabiria, Victor and Pedro Mira (2002). Swapping the nested fixed point algorithm: A class of estimators for discrete Markov decision models. \textit{Econometrica} 70(4), 1519-1543.  
     \bibitem[Arcidiacono and Ellickson (2011)]{are11:arcidiaconoellickson} Arcidiacono, Peter and Paul B. Ellickson (2011).  Practical methods for estimation of dynamic discrete choice models. \textit{Annual Review of Economics} 3, 363-394.
-    \bibitem[Arcidiacono and Miller (2011)]{ecta11:arcidiaconomiller} Arcidiacono, Peter and David A. Miller (2011).  Conditional choice probability estimation of dynamic discrete choice models with unobserved heterogeneity. \textit{Econometrica} 79, 1823-1867.
+    \bibitem[Arcidiacono and Miller (2011)]{ecta11:arcidiaconomiller} Arcidiacono, Peter and Robert A. Miller (2011).  Conditional choice probability estimation of dynamic discrete choice models with unobserved heterogeneity. \textit{Econometrica} 79, 1823-1867.
     \bibitem[Bajari, Benkard, and Levin (2007)]{ecta07:bajarietal}Bajari, Patrick, Lanier Benkard, and Jonathan Levin (2007). Estimating dynamic models of imperfect competition. \textit{Econometrica} 75(5), 1331-1370.
     \bibitem[Berry, Levinsohn, and Pakes (1995)]{ecta95:berryetal} Berry, Steven, James Levinsohn, and Ariel Pakes (1995). Automobile prices in market equilibrium. \textit{Econometrica} 63, 841-890.
     \bibitem[Dixit (1989)]{jpe89:dixit}Dixit, Avinash K. (1989). Entry and exit decisions under uncertainty. \textit{Journal of Political Economy} 97(3), 620-638.
     \bibitem[Dub&eacute;, Fox, and Su (2012)]{ecta12:dubeetal}Dub&eacute;, Jean-Pierre, Jeremy T. Fox, and Che-Lin Su (2012). Improving the numerical performance of static and dynamic aggregate discrete choice random coefficients demand estimation. \textit{Econometrica} 80, 2231-2267.
     \bibitem[Eckstein and Wolpin (1990)]{Eckstein_Wolpin_1990_Econometrica} Eckstein, Zvi and Kenneth I. Wolpin (1990). Estimating a market equilibrium search model from panel data on individuals. \textit{Econometrica} 58(4), 783-808.
     \bibitem[Eckstein and Wolpin (1999)]{Eckstein_Wolpin_1999_Econometrica} Eckstein, Zvi and Kenneth I. Wolpin (1999). Why youths drop out of high school: The impact of preferences, opportunities, and abilities. \textit{Econometrica} 67(6), 1295-1339.
-    \bibitem[Hotz and Miller (1993)]{res93:hotzmiller}Hotz, V. Joseph and David A. Miller (1993). Conditional choice probabilities and the estimation of dynamic models. \textit{Review of Economic Studies} 60, 497-529.
-    \bibitem[Hotz et al. (1994)]{res94:hotzetal}Hotz, V. Joseph, David A. Miller, Seth Sanders and Jeffrey Smith (1994). A simulation estimator for dynamic models of discrete choice. \textit{Review of Economic Studies} 61(2), 265-289.
+    \bibitem[Hotz and Miller (1993)]{res93:hotzmiller}Hotz, V. Joseph and Robert A. Miller (1993). Conditional choice probabilities and the estimation of dynamic models. \textit{Review of Economic Studies} 60, 497-529.
+    \bibitem[Hotz et al. (1994)]{res94:hotzetal}Hotz, V. Joseph, Robert A. Miller, Seth Sanders and Jeffrey Smith (1994). A simulation estimator for dynamic models of discrete choice. \textit{Review of Economic Studies} 61(2), 265-289.
     \bibitem[Iskhakov et al. (2016)]{ecta16:iskhakovetal} Iskhakov, Fedor, Jinhyuk Lee, John Rust, Bertel Schjerning and Kyoungwon Seo (2016). Comment on "Constrained optimization approaches to estimation of structural models". \textit{Econometrica} 84(1), 365-370.
     \bibitem[Judd (1998)]{mit98:judd}Judd, Kenneth L. 1998. \textit{Numerical Methods in Economics}.  MIT Press. Cambridge, MA.
     \bibitem[Judd and Su (2012)]{ecta12:juddsu} Judd, Kenneth L. and Che-Lin Su (2012). Constrained optimization approaches to estimation of structural models. \textit{Econometrica} 80(5), 2213-2230.
